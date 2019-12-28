@@ -3016,11 +3016,17 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   -webkit-transform: translateY(3rem);
   -ms-transform: translateY(3rem);
   transform: translateY(3rem);
-  -webkit-transition: opacity .5s .6s ease, -webkit-transform .5s .6s ease;
-  transition: opacity .5s .6s ease, -webkit-transform .5s .6s ease;
-  -o-transition: transform .5s .6s ease, opacity .5s .6s ease;
-  transition: transform .5s .6s ease, opacity .5s .6s ease;
-  transition: transform .5s .6s ease, opacity .5s .6s ease, -webkit-transform .5s .6s ease;
+  -webkit-transition: opacity .5s .6s ease,
+ -webkit-transform .5s .6s ease;
+  transition: opacity .5s .6s ease,
+ -webkit-transform .5s .6s ease;
+  -o-transition: transform .5s .6s ease,
+ opacity .5s .6s ease;
+  transition: transform .5s .6s ease,
+ opacity .5s .6s ease;
+  transition: transform .5s .6s ease,
+ opacity .5s .6s ease,
+ -webkit-transform .5s .6s ease;
   list-style: none;
   padding-left: 18%;
   padding-right: 100px;
@@ -5597,7 +5603,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: 0;
+  bottom: 17%;
   top: auto;
 }
 
@@ -7436,6 +7442,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 .tab_img_info {
   position: relative;
+  margin-top: 10em;
 }
 
 .tab_img_info .tab_img {
