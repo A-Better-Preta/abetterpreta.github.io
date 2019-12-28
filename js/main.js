@@ -4,7 +4,7 @@
 
     /*-------------------------------------------------------------------------------
 	  Navbar 
-	-------------------------------------------------------------------------------*/ 
+	-------------------------------------------------------------------------------*/
     function navbarFixed() {
         if ($('.header_area').length) {
             $(window).scroll(function () {
@@ -274,9 +274,9 @@
     erpTestimonial();
 
 
-   /*-------------------------------------------------------------------------------
-	  testimonial_slider js
-	-------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------
+       testimonial_slider js
+     -------------------------------------------------------------------------------*/
     function testimonialSlider() {
         var testimonialSlider = $(".testimonial_slider");
         if (testimonialSlider.length) {
@@ -297,7 +297,7 @@
         }
     }
     testimonialSlider();
-    
+
     /*-------------------------------------------------------------------------------
 	  app_testimonial_slider js
 	-------------------------------------------------------------------------------*/
@@ -760,13 +760,13 @@
     if ($(".mailchimp").length > 0) {
         $(".mailchimp").ajaxChimp({
             callback: mailchimpCallback,
-            url: "http://droitlab.us15.list-manage.com/subscribe/post?u=0fa954b1e090d4269d21abef5&id=a80b5aedb0" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
+            url: "https://abetterpreta.us4.list-manage.com/subscribe/post?u=6d9e6a4c1ef1a68764c7abc71&amp;id=0f2b13b4e3" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
         });
     }
     if ($(".mailchimp_two").length > 0) {
         $(".mailchimp_two").ajaxChimp({
             callback: mailchimpCallback,
-            url: "https://droitthemes.us19.list-manage.com/subscribe/post?u=5d334217e146b083fe74171bf&amp;id=0e45662e8c" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
+            url: "https://abetterpreta.us4.list-manage.com/subscribe/post?u=6d9e6a4c1ef1a68764c7abc71&amp;id=0f2b13b4e3" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
         });
     }
     $(".memail").on("focus", function () {

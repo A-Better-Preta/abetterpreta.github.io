@@ -8207,6 +8207,10 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   background: #faf9fa;
 }
 
+.about-widget .grey:any-link {
+  color: grey;
+}
+
 /*=========== s_subscribe_area css ============*/
 .s_subscribe_area {
   position: relative;
@@ -8229,6 +8233,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 .s_subscribe_area .mchimp-errmessage, .s_subscribe_area .mchimp-sucmessage {
   text-align: center;
+  margin-top: 20px;
 }
 
 .right_shape, .bottom_shape {
