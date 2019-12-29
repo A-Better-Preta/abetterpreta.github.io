@@ -61,6 +61,7 @@
 [data-ty] {
     display: block;
     line-height: 1.5;
+    text-align: initial;
 }
 
 [data-ty]:before {
