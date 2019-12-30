@@ -1033,6 +1033,19 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     visibility: hidden;
     display: none;
   }
+  .sticky_logo img, .f-logo img {
+    width: 60%;
+  }
+  .f-logo img {
+    margin-top: -16px;
+  }
+}
+
+@media (max-width: 991px) {
+  
+  .sticky_logo img, .f-logo img {
+    width: 100%;
+  }
 }
 
 .menu > .nav-item {
