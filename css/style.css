@@ -47,7 +47,7 @@ Table of Content:
 /*====================================================*/
 .cooltext {
   margin-left: 20%;
-margin-top: -10%;
+  margin-top: -10%;
   transform: translate(50%,-50%);
   font-family: verdana;
   font-size: 5em;
@@ -69,7 +69,20 @@ margin-top: -10%;
   1px 25px 35px rgba(16,16,16,0.2),
   1px 30px 60px rgba(16,16,16,0.4);
 }
-
+@media (max-width: 767px) {
+  .cooltext {
+    left: 20%;
+    font-size: 2em;
+    text-shadow: 1px 1px 1px #919191,
+      1px 2px 1px #919191,
+      1px 3px 1px #919191,
+      1px 4px 1px #919191,
+      1px 5px 1px #919191,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+  }
+}
 
 a {
   text-decoration: none;
