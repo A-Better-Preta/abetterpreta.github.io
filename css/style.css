@@ -1039,6 +1039,9 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   .f-logo img {
     margin-top: -16px;
   }
+  .eidas {
+    padding: 20%;
+  }
 }
 
 @media (max-width: 991px) {
