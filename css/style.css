@@ -1052,7 +1052,9 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   .f-logo img {
     width: 50%;
   }
-
+  .eidas {
+  width: 50%;
+  }
 }
 
 .menu > .nav-item {
