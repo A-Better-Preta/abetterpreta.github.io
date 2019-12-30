@@ -1044,7 +1044,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 @media (max-width: 991px) {
   
   .sticky_logo img, .f-logo img {
-    width: 100%;
+    width: 50%;
   }
 }
 
