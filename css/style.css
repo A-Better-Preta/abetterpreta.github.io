@@ -7011,11 +7011,12 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .p_service_item .icon.icon_three {
-  background: #f38650;
+  background: #3d64f4 ;
+  opacity: 0.9;
 }
 
 .p_service_item .icon.icon_three:before {
-  background: #f38650;
+  background: #3d64f4;
 }
 
 .p_service_item .icon.icon_four {
