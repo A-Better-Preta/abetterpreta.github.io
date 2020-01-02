@@ -1062,7 +1062,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     visibility: hidden;
     display: none;
   }
-  .f-logo img {
+  .sticky_logo img, .f-logo img {
     width: 60%;
   }
   .f-logo img {
