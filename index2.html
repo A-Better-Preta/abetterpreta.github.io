@@ -331,7 +331,8 @@ HTTP/2.0 200 OK
     "certificateStatus": "European Qualified Certificate", 
     "certificateType" : "QWAC", 
     "validThru": "2021-12-24", 
-    "fingerprint": "xxx", 
+    "sha1": "&#60;SHA-1 Fingerprint&#62;",
+    "sha256": "&#60;SHA-256 Fingerprint&#62;",
     "qtspName": "x1", 
     "qtspStatus": "valid", 
     "ebaDate": "2019120250800", 
@@ -399,7 +400,7 @@ HTTP/2.0 200 OK
                             </p>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">
                                 Saving time and burden for ASPSPs with manual onboarding processess of TPPs. For TPPs
-                                this is your easiest way to control your contact information in just one entry point.
+                                this is the easiest way to verify and eventually update contact information.
                             </p>
                             <a href="#apidocs" class="btn_hover btn_four wow fadeInRight" data-wow-delay="0.6s">API
                                 Documentation</a>
@@ -430,31 +431,31 @@ HTTP/2.0 200 OK
                             <div class="tab-content developer_tab_content">
                                 <div class="tab-pane fade show active" id="aspsp" role="tabpanel"
                                     aria-labelledby="aspsp-tab">
-                                    <p class="mb_40">Why complicate things. Onboard yourself (<b>as TPP</b>) or your
-                                        requesting
-                                        TPPs (<b>as ASPSP</b>) by sending a POST request with a data (body) payload
-                                        using the
-                                        "x509" key and paste your certificate in the value field
-                                        including<br>
-                                        <span
-                                            style="font-size: 14px;
+                                    <p class="mb_40">Onboard new TPPs requesting access to PSD2 APIs by sending a POST
+                                        request with a data (body) payload
+                                        using the incoming TPPs certificate as the "x509" value,
+                                        including;</p>
+                                    <span
+                                        style="font-size: 14px;
                                         font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;">
-                                            "-----BEGIN CERTIFICATE-----<br>
-                                            MDDJBDCCBuygAwIBAgIUFI. . . .<br>
-                                            . . . wPBvdnxWtCiIFL6GLUyQU=<br>
-                                            -----END CERTIFICATE-----"</span>
+                                        "-----BEGIN CERTIFICATE-----<br>
+                                        MDDJBDCCBuygAwIBAgIUFI. . . .<br>
+                                        . . . wPBvdnxWtCiIFL6GLUyQU=<br>
+                                        -----END CERTIFICATE-----"</span>
                                     </p>
                                     <p class="mb_40">Thats it. Really!</p>
                                 </div>
                                 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
-                                    <p class="mb_40">As simple as our POST endpoint, just put the incoming TPP
-                                        certificate as a x509 key
-                                        with the certificate as payload value, or even easier, the SHA-1 fingerprint in
+                                    <p class="mb_40">Pipe realtime PSD2 API requests using the incoming
+                                        certificate in the "x509" value, optionally use its "sha-1" or
+                                        "sha-256" fingerprint directly in
                                         the request header together with your <b>subscriptionId</b>.</p>
                                     <p class="mb_40">You will get an
-                                        response in ms with real
-                                        time verifications and EBA validations to rest asure that any incoming
+                                        response in milliseconds with real
+                                        time verifications and all EBA validations to rest asure that any incoming
                                         TPP request can be signed off as fully compliant.</p>
+
+                                    <p class="mb_40">Enjoy!</p>
                                 </div>
                             </div>
                         </div>
@@ -471,8 +472,8 @@ HTTP/2.0 200 OK
                                         "status": "Valid PSD2 eIDAS certificate and successfully onboarded",
                                         "certificateOwner": "SE-FINA-1337",
                                         "validThru": "2021-12-24",
-                                        "fingerprint": "xxx",
-                                        "certificateUrl": "https://abetterpreta.com/xxx"
+                                        "sha1": "&#60;SHA-1 Fingerprint&#62;",
+                                        "sha256": "&#60;SHA-256 Fingerprint&#62;"
                                         }
                                     </span>
                                 </div>
@@ -486,7 +487,9 @@ HTTP/2.0 200 OK
                                     <span data-ty startDelay="20"><br>HTTP/2.0 200 OK<br>{ "status": "Valid PSD2 eIDAS
                                         certificate", "certificateOwner": "SE-FINA-1337", "certificateStatus": "European
                                         Qualified Certificate", "certificateType" : "QWAC", "validThru": "2021-12-24",
-                                        "fingerprint": "xxx", "qtspName": "x1", "qtspStatus": "valid", "ebaDate":
+                                        "sha1": "&#60;SHA-1 Fingerprint&#62;",
+                                        "sha256": "&#60;SHA-256 Fingerprint&#62;",, "qtspName": "x1", "qtspStatus":
+                                        "valid", "ebaDate":
                                         "2019120250800", "passPorting": {"SE": "AI,PI", "DK": "AI", "NO": "AI,PI"}
                                         }</span>
                                 </div>
@@ -540,9 +543,11 @@ HTTP/2.0 200 OK
                         <div class="col-lg-3 col-md-6">
                             <div class="f_widget about-widget">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Partners</h3>
-
-                                <p style="font-size: 0.7em; line-height: 1.2rem">
-                                    TBA
+                                <p>
+                                    <!img class="partners ms" src="img/microsoft-logo.png">
+                                </p>
+                                <p>
+                                    <!img class="partners cf" src="img/cf-logo-v-rgb.png">
                                 </p>
                             </div>
                         </div>
