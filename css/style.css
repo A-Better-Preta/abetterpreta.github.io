@@ -70,7 +70,7 @@ Table of Content:
   1px 30px 60px rgba(16,16,16,0.4);
 }
 @media (max-width: 767px) {
-  .cooltext { visibility: hidden;
+  .cooltext { display: none;
   }
 }
 
