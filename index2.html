@@ -217,9 +217,9 @@
                                     identification. TPPs identification shall rely on a qualified certificate, as
                                     defined in EU Regulation 910/2014 (eIDAS).</p>
                                 <p>
-                                    Conclusion, all ASPSPs must make sure all TPP PSD2 access requests are made by their
-                                    respective certificate holder, having a valid PSD2 eIDAS certificate and authored by
-                                    any of EU Qualified Certificate Providers including applicable Passporting rights.
+                                    TL;DR, all ASPSPs must make sure all TPP PSD2 access requests are made by their
+                                    respective certificate holder, having a valid PSD2 eIDAS certificate issued by
+                                    a compliant Qualified Trusted Service Providers (QTSPs).
                                 </p>
                                 </p>
                                 <h3>Deliviered as a service.</h3>
@@ -329,8 +329,9 @@ HTTP/2.0 200 OK
     "status": "Valid PSD2 eIDAS certificate", 
     "certificateOwner": "SE-FINA-1337", 
     "certificateStatus": "European Qualified Certificate", 
-    "certificateType" : "QWAC", 
-    "validThru": "2021-12-24", 
+    "certificateType" : "QWAC",
+    "validFrom": "2019-12-25",
+    "validTo": "2021-12-24", 
     "sha1": "&#60;SHA-1 Fingerprint&#62;",
     "sha256": "&#60;SHA-256 Fingerprint&#62;",
     "qtspName": "x1", 
@@ -399,8 +400,10 @@ HTTP/2.0 200 OK
                                 same request.
                             </p>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">
-                                Saving time and burden for ASPSPs with manual onboarding processess of TPPs. For TPPs
-                                this is the easiest way to verify and eventually update contact information.
+                                For ASPSPs this means new TPPs can be onboarded in a fast yet secure manner, fully
+                                automatically. Always securely validated against the current validation schemas and
+                                realtime statuses
+                                nevermind their origin.
                             </p>
                             <a href="#apidocs" class="btn_hover btn_four wow fadeInRight" data-wow-delay="0.6s">API
                                 Documentation</a>
@@ -431,29 +434,29 @@ HTTP/2.0 200 OK
                             <div class="tab-content developer_tab_content">
                                 <div class="tab-pane fade show active" id="aspsp" role="tabpanel"
                                     aria-labelledby="aspsp-tab">
-                                    <p class="mb_40">Onboard new TPPs requesting access to PSD2 APIs by sending a POST
-                                        request with a data (body) payload
-                                        using the incoming TPPs certificate as the "x509" value,
-                                        including;</p>
-                                    <span
-                                        style="font-size: 14px;
+                                    <p class="mb_40">Onboard and verify new TPPs requesting access to PSD2 APIs by
+                                        sending a POST
+                                        request with the incoming TPP certificate as the "x509" value,
+                                        make sure to include the whole certificate value;<br>
+                                        <span
+                                            style="font-size: 14px;
                                         font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;">
-                                        "-----BEGIN CERTIFICATE-----<br>
-                                        MDDJBDCCBuygAwIBAgIUFI. . . .<br>
-                                        . . . wPBvdnxWtCiIFL6GLUyQU=<br>
-                                        -----END CERTIFICATE-----"</span>
+                                            "-----BEGIN CERTIFICATE-----<br>
+                                            MDDJBDCCBuygAwIBAgIUFI. . . .<br>
+                                            . . . wPBvdnxWtCiIFL6GLUyQU=<br>
+                                            -----END CERTIFICATE-----"</span>
                                     </p>
-                                    <p class="mb_40">Thats it. Really!</p>
+                                    <p class="mb_40">Thats it really! Getting TPPs onboard quick and safe.</p>
                                 </div>
                                 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
                                     <p class="mb_40">Pipe realtime PSD2 API requests using the incoming
                                         certificate in the "x509" value, optionally use its "sha-1" or
                                         "sha-256" fingerprint directly in
                                         the request header together with your <b>subscriptionId</b>.</p>
-                                    <p class="mb_40">You will get an
+                                    <p class="mb_40">You will get the
                                         response in milliseconds with real
-                                        time verifications and all EBA validations to rest asure that any incoming
-                                        TPP request can be signed off as fully compliant.</p>
+                                        time verifications and coherent EBA validations to rest asure that any incoming
+                                        TPP request can be signed off as fully compliant at the time of the request.</p>
 
                                     <p class="mb_40">Enjoy!</p>
                                 </div>
@@ -471,7 +474,8 @@ HTTP/2.0 200 OK
                                         {
                                         "status": "Valid PSD2 eIDAS certificate and successfully onboarded",
                                         "certificateOwner": "SE-FINA-1337",
-                                        "validThru": "2021-12-24",
+                                        "validFrom": "2019-12-25",
+                                        "validTo": "2021-12-24",
                                         "sha1": "&#60;SHA-1 Fingerprint&#62;",
                                         "sha256": "&#60;SHA-256 Fingerprint&#62;"
                                         }
@@ -486,7 +490,8 @@ HTTP/2.0 200 OK
                                         https://api.abetterpreta.com/validation</span>
                                     <span data-ty startDelay="20"><br>HTTP/2.0 200 OK<br>{ "status": "Valid PSD2 eIDAS
                                         certificate", "certificateOwner": "SE-FINA-1337", "certificateStatus": "European
-                                        Qualified Certificate", "certificateType" : "QWAC", "validThru": "2021-12-24",
+                                        Qualified Certificate", "certificateType" : "QWAC", "validFrom": "2019-12-25",
+                                        "validTo": "2021-12-24",
                                         "sha1": "&#60;SHA-1 Fingerprint&#62;",
                                         "sha256": "&#60;SHA-256 Fingerprint&#62;",, "qtspName": "x1", "qtspStatus":
                                         "valid", "ebaDate":
