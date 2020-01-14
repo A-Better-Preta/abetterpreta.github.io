@@ -166,12 +166,12 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span style="font-size: 6em;">500+</span>
+                                <h1 class="t_color3"><span style="font-size: 6em;">237</span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
-                                <h3 class="t_color3"><span style="font-size: 2em;">32</span><br>
-                                    <span style="font-size: 1em;">Qualifed Trust Service Providers</span>
+                                <h3 class="t_color3"><span style="font-size: 2em;">19</span><br>
+                                    <span style="font-size: 1em;">Qualified Trust Service Providers</span>
                                 </h3>
 
                             </div>
@@ -316,7 +316,7 @@
                             <div class="icon icon_three"><i class="ti-bar-chart-alt"></i></div>
                             <h5 class="f_600 f_p t_color3">Reduce your OpEx</h5>
                             <p class="f_400">Cut your running costs with A Better Preta, no servers, no
-                                licensees, no mainteinance, no staffing. Enjoy <u>Compliance-as-a-Service</u>.</p>
+                                licensees, no maintenance, no staffing. Enjoy <u>Compliance-as-a-Service</u>.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
@@ -384,22 +384,30 @@
                                 <span data-ty startDelay="400">
                                     <pre style="overflow: hidden">
 HTTP/2.0 200 OK
-
-{ 
-    "status": "Valid PSD2 eIDAS certificate", 
-    "tppId": "SE-FINA-1337", 
-    "tppName": "Swedish 1337 FinTech AB", 
-    "certType" : "QWAC", 
-    "validFrom": "2019-12-25", 
-    "validTo": "2021-12-24", 
-    "currentStatus": "http://uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted", 
-    "sha1": "3173F7E3799A4FDF90A992AA7DE030CC33F2B8E6", 
-    "sha256": "93177AE3CF459D6C92AE8565892DACE5D9343B79A38FE77352357558549775BE", 
-    "certIssuer": "Buypass Class 3 CA 3", 
-    "revokedStatus": "False", 
-    "serviceName": "Qualified certificates for electronic signature and electronic seal (Buypass Class 3 CA 3)", 
-    "crlUrls": "http://crl.buypass.no/crl/BPClass3CA3.crl", 
-    "passPorting": {"SE": "AI,PI", "DK": "AI", "NO": "AI,PI"} }
+{
+    "validityStatus":"true",
+    "validityDetails":"European Qualified Certificate for PSD (EU 1394/22)",
+    "tppId":"PSDSE-FINA-1337",
+    "tppShort":"Gogo1337.io",
+    "tppName":"Swedish 1337 FinTech AB",
+    "psd2Scopes":[
+        "PSP_AS, PSP_PI, PSP_AI"],
+    "passPorting":[{
+        "SE":["PSP_AS, PSP_PI"]},{
+        "AT":["PSP_AS, PSP_PI, PSP_AI"]
+    }],
+    "ncaName":"Swedish Financial Supervision Authority",
+    "ncaCode":"SE-FINA",
+    "authDate":"2019-12-01",
+    "revokedStatus":"False",
+    "certType":"QWAC",
+    "certName":"Qualified certificates for website authentication (Buypass Class 3 CA 2)",
+    "certIssuer":"Buypass Class 3 CA 3",
+    "certIssuerCountry":"NO",
+    "certValidFrom":"2019-12-25",
+    "certValidTo":"2021-12-24",
+    "sha1":"1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",
+    "sha256":"93177AE3CF459D6C92AE8565892DACE5D9343B79A38FE77352357558549775BE"
 }
 </pre>
                                 </span>
@@ -409,13 +417,10 @@ HTTP/2.0 200 OK
                     <div class="col-lg-5 col-md-5 d-flex align-items-center">
                         <div class="design_img_two wow fadeInRight" data-wow-delay="0.4s">
                             <div id="termynal" data-termynal data-ty-typeDelay="40">
-                                <span data-ty="input">curl
+                                <span data-ty="input">curl --request GET
                                     https://api.abetterpreta.com/validation<br>
-                                    --header
-                                    "Content-Type: application/json",<br>
-                                    "subscriptionId: &#60;demoId&#62;",
-                                    "sha1: &#60;SHA-1&#62;"<br>
-                                    --request GET</span>
+                                    --header "subscriptionId: demo1337demo",
+                                    "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6"</span>
                             </div>
                         </div>
                     </div>
@@ -453,12 +458,9 @@ HTTP/2.0 200 OK
                             </h2>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">Our free self service
                                 for certificate validation are available not only for ASPSPs but also any TPP that
-                                wishes to smoothen future validations by reviewing current validation status, both SHA-1
-                                &
-                                SHA-256 fingerprints, TPP
-                                contact information and
-                                other useful information. Optionally a TPP can add additional contact information in the
-                                same request.
+                                wishes to smoothen future validations while also reviewing current validation status,
+                                SHA-1
+                                & SHA-256 fingerprints.
                             </p>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">
                                 For ASPSPs this means new TPPs can be onboarded in a fast yet secure manner, fully
@@ -497,21 +499,13 @@ HTTP/2.0 200 OK
                             <div class="tab-content developer_tab_content">
                                 <div class="tab-pane fade show active" id="aspsp" role="tabpanel"
                                     aria-labelledby="aspsp-tab">
-                                    <p class="mb_40">Onboard and verify new TPPs requesting access to your PSD2 APIs by
-                                        POST a
-                                        request with their incoming certificate sent as "base64" key value, just
+                                    <p class="mb_40">Onboard and verify new TPPs requesting access to your PSD2 APIs
+                                        with
+                                        simple POST request including the incoming TPP certificate posted as the
+                                        "base64"-key value, just
                                         make sure to send it as is, meaning no cleverness applied.<br>
-                                        <!--
-                                        <span
-                                            style="font-size: 14px;
-                                        font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;">
-                                            "-----BEGIN CERTIFICATE-----<br>
-                                            MDDJBDCCBuygAwIBAgIUFI. . . .<br>
-                                            . . . wPBvdnxWtCiIFL6GLUyQU=<br>
-                                            -----END CERTIFICATE-----"</span>
-                                        -->
                                     </p>
-                                    <p class="mb_40">Thats it really! Getting TPPs onboard, simple yet reliable.</p>
+                                    <p class="mb_40">Thats it! Getting TPPs onboard, simple yet reliable.</p>
                                 </div>
                                 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
                                     <p class="mb_40">Pipe realtime PSD2 API requests incoming
@@ -519,7 +513,8 @@ HTTP/2.0 200 OK
                                         <b>subscriptionId</b>.</p>
                                     <p class="mb_40">You will get the
                                         response in milliseconds with real
-                                        time verifications and coherent EBA validations to rest asure that any incoming
+                                        time verifications and coherent EBA validations to rest assured that any
+                                        incoming
                                         TPP request can be signed off as fully compliant at the time of the request.</p>
                                     <p class="mb_40">Enjoy!</p>
                                 </div>
@@ -530,39 +525,47 @@ HTTP/2.0 200 OK
                         <div class="tab_img_info">
                             <div class="tab_img active" id="tab_one">
                                 <div id="termynal" data-termynal data-ty-typeDelay="10" data-ty-startDelay="600">
-                                    <span data-ty="input">curl --header "Content-Type: application/json"
-                                        --request POST --data '{"base64":"-----BEGIN CERTIFICATE-----.....-----END
-                                        CERTIFICATE-----"}' https://api.abetterpreta.com/certificate </span>
+                                    <span data-ty="input">curl --request POST https://api.abetterpreta.com/certificate
+                                        --data '{"base64":"-----BEGIN CERTIFICATE-----.....-----END
+                                        CERTIFICATE-----"}' </span>
                                     <span data-ty startDelay="50"><br>HTTP/2.0 200 OK<br>
                                         {
-                                        "status": "Valid PSD2 eIDAS certificate and successfully onboarded",
-                                        "certificateOwner": "SE-FINA-1337",
-                                        "validFrom": "2019-12-25",
-                                        "validTo": "2021-12-24",
-                                        "sha1": "&#60;SHA-1 Fingerprint&#62;",
-                                        "sha256": "&#60;SHA-256 Fingerprint&#62;"
+                                        "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
+                                        FinTech AB", "ncaName":"Swedish Financial Supervision Authority",
+                                        "ncaCode":"SE-FINA",
+                                        "authDate":"2019-12-01", "certType":"QWAC", "certName":"Qualified certificates
+                                        for
+                                        website authentication (Buypass Class 3 CA 2)", "certIssuer":"Buypass Class 3 CA
+                                        3",
+                                        "sha1":"1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",
+                                        "sha256":"93177AE3CF459D6C92AE8565892DACE5D9343B79A38FE77352357558549775BE"
                                         }
                                     </span>
                                 </div>
                             </div>
                             <div class="tab_img" id="tab_two">
                                 <div id="termynal" data-termynal data-ty-typeDelay="40" data-ty-startDelay="600">
-                                    <span data-ty="input">curl --header
-                                        "Content-Type: application/json", "subscriptionId: &#60;SUBSCRIPTION ID&#62;",
-                                        "fingerprint: &#60;SHA-1&#62;" --request GET
-                                        https://api.abetterpreta.com/validation</span>
-                                    <span data-ty startDelay="20"><br>HTTP/2.0 200 OK<br>{ "status": "Valid PSD2 eIDAS
-                                        certificate", "tppId": "SE-FINA-1337", "tppName": "Swedish 1337 FinTech AB",
-                                        "certType" : "QWAC", "validFrom": "2019-12-25",
-                                        "validTo": "2021-12-24", "currentStatus":
-                                        "http://uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted",
-                                        "sha1": "&#60;SHA-1 Fingerprint&#62;",
-                                        "sha256": "&#60;SHA-256 Fingerprint&#62;", "certIssuer": "Buypass Class 3 CA 3",
-                                        "revokedStatus":
-                                        "False", "serviceName":
-                                        "Qualified certificates for electronic signature and electronic seal (Buypass
-                                        Class 3 CA 3)", "crlUrls": "http://crl.buypass.no/crl/BPClass3CA3.crl",
-                                        "passPorting": {"SE": "AI,PI", "DK": "AI", "NO": "AI,PI"}
+                                    <span data-ty="input">curl --request GET
+                                        https://api.abetterpreta.com/validation<br>
+                                        --header "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",<br>
+                                        "subscriptionId: demo1337demo"
+                                    </span>
+                                    <span data-ty startDelay="20"><br>HTTP/2.0 200 OK<br>{
+                                        "validityStatus":"true", "validityDetails":"European Qualified Certificate for
+                                        PSD (EU 1394/22)",
+                                        "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
+                                        FinTech AB", "psd2Scopes":["PSP_AS, PSP_PI,
+                                        PSP_AI"],"passPorting":[{"SE":["PSP_AS,
+                                        PSP_PI"]},{"AT":["PSP_AS, PSP_PI, PSP_AI"]}],
+                                        "ncaName":"Swedish Financial Supervision
+                                        Authority", "ncaCode":"SE-FINA", "authDate":"2019-12-01",
+                                        "revokedStatus":"False", "certType":"QWAC", "certName":"Qualified
+                                        certificates for
+                                        website authentication (Buypass Class 3
+                                        CA 2)", "certIssuer":"Buypass Class 3 CA 3", "certIssuerCountry":"NO",
+                                        "certValidFrom":"2019-12-25", "certValidTo":"2021-12-24",
+                                        "sha1":"1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",
+                                        "sha256":"93177AE3CF459D6C92AE8565892DACE5D9343B79A38FE77352357558549775BE"
                                         }</span>
                                 </div>
                             </div>
@@ -622,16 +625,25 @@ HTTP/2.0 200 OK
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="f_widget about-widget">
-                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Partners</h3>
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Trusted Providers</h3>
+
                                 <p>
-                                    <!img class="partners ms" src="img/microsoft-logo.png">
+                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="width: 200px; opacity:0.67; 
+                                        -webkit-filter: grayscale(100%);
+                                        -moz-filter:    grayscale(100%);
+                                        -ms-filter:     grayscale(100%);
+                                        -o-filter:      grayscale(100%);">
                                 </p>
                                 <p>
-                                    <!img class="partners cf" src="img/cf-logo-v-rgb.png">
+                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 170px; opacity:0.5;
+                                    -webkit-filter: grayscale(100%);
+                                    -moz-filter:    grayscale(100%);
+                                    -ms-filter:     grayscale(100%);
+                                    -o-filter:      grayscale(100%);">
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class=" col-lg-3 col-md-6">
                             <div class="f_widget about-widget">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Legal</h3>
                                 <p style="font-size: 0.8em; line-height: 2rem">
