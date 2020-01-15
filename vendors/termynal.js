@@ -71,7 +71,7 @@ class Termynal {
     }
 
     /**
-     * Start the animation and render the lines depending on their data attributes.
+     * Start the animation and rener the lines depending on their data attributes.
      */
     async start() {
         await this._wait(this.startDelay);
