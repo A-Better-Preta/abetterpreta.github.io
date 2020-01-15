@@ -130,13 +130,13 @@
                                 Compliance-as-a-Service for Payment Services Directive (EU 2015/2366, PSD2) with its
                                 Commission
                                 for
-                                Delegated Regulation (EU 2018/389, RTS Article 34) the TPP Validation
+                                Delegated Regulation (EU 2018/389, RTS Article 34) aka the TPP Validation
                                 requirement.
                                 Basically made so you
                                 don't have to.</p>
                             <p class="w_color f_size_18 l_height30 mt_30 wow fadeInLeft" data-wow-delay="0.4s">It's a
                                 one call
-                                validation, a single & simple API request. That's it!</p>
+                                validation by a simple API request. That's it!</p>
                             <div class="action_btn d-flex align-items-center mt_40 wow fadeInLeft"
                                 data-wow-delay="0.6s">
                                 <a href="#signup" class="software_banner_btn">Get Early Access</a>
@@ -196,8 +196,8 @@
                                     <p class="mb-0">No. of Citizens <br>within the EU.</p>
                                 </div>
                                 <div class="fact_item pl_100">
-                                    <h1 class="t_color2"><span>210</span>K+</h1>
-                                    <p class="mb-0">No. of Trusted<br>Service Providers.</p>
+                                    <h1 class="t_color2"><span>8000</span id>+</h1>
+                                    <p class="mb-0">No. of Banks<br>serving the EU Citizens.</p>
                                 </div>
                             </div>
                         </div>
@@ -238,23 +238,13 @@
                     </div>
                     <div class="row agency_featured_item agency_featured_item_two" id="service">
                         <div class="col-lg-6">
-                            <div class="agency_featured_img text-right wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="agency_featured_img wow fadeInLeft" data-wow-delay="0.2s">
                                 <img src="img/eidas-wheel.png" alt="">
                             </div>
 
                             <div class="design_img_two wow fadeInRight" data-wow-delay="0.4s"
                                 style="width: 100%; margin-left: 0; margin-top: 33%;">
                                 <span class="cooltext">RESTful &<br>{ JSON }</span>
-
-                                <!--
-                                <div id="termynal" data-termynal data-light data-ty-typeDelay="40">
-                                    <span data-ty="input">curl -i GET https://api.abetterpreta.com/validation
-                                    </span>
-                                    <span data-ty><br>
-                                        HTTP/2.0 200 OK delivered in 47ms.
-                                    </span>
-                                </div>
-                            -->
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -381,8 +371,8 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-7">
                         <div class="design_img wow fadeInRight" data-wow-delay="0.2s">
-                            <div id=" termynal" data-light data-termynal data-ty-typeDelay="100">
-                                <span data-ty startDelay="400">
+                            <div id="termynal-container" data-light data-termynal-res>
+                                <span data-ty startDelay="1500">
                                     <pre style="overflow: hidden">
 HTTP/2.0 200 OK
 {
@@ -391,6 +381,8 @@ HTTP/2.0 200 OK
     "tppId":"PSDSE-FINA-1337",
     "tppShort":"Gogo1337.io",
     "tppName":"Swedish 1337 FinTech AB",
+    "tppCity":"Stockholm"
+    "tppCountry":"SE"
     "psd2Scopes":[
         "PSP_AS, PSP_PI, PSP_AI"],
     "passPorting":[{
@@ -399,6 +391,7 @@ HTTP/2.0 200 OK
     }],
     "ncaName":"Swedish Financial Supervision Authority",
     "ncaCode":"SE-FINA",
+    "naCountry":"SE"
     "authDate":"2019-12-01",
     "revokedStatus":"False",
     "certType":"QWAC",
@@ -417,7 +410,7 @@ HTTP/2.0 200 OK
                     </div>
                     <div class="col-lg-5 col-md-5 d-flex align-items-center">
                         <div class="design_img_two wow fadeInRight" data-wow-delay="0.4s">
-                            <div id="termynal" data-termynal data-ty-typeDelay="40">
+                            <div id=" termynal-container" data-termynal-req data-ty-typeDelay="40">
                                 <span data-ty="input">curl --request GET
                                     https://api.abetterpreta.com/validation<br>
                                     --header "subscriptionId: demo1337demo",
@@ -459,15 +452,14 @@ HTTP/2.0 200 OK
                             </h2>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">Our free self service
                                 for certificate validation are available not only for ASPSPs but also any TPP that
-                                wishes to smoothen future validations while also reviewing current validation status,
-                                SHA-1
-                                & SHA-256 fingerprints.
+                                wishes to smoothen future validations while also reviewing current validation status and
+                                other information such as the certificates
+                                SHA-1 & SHA-256 fingerprints.
                             </p>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">
-                                For ASPSPs this means new TPPs can be onboarded in a fast yet secure manner, fully
-                                automatically. Always securely validated against the current validation schemas and
-                                realtime statuses
-                                nevermind their origin.
+                                By using this service ASPSPs can now fully automate their often manual and costly TPP
+                                onboarding
+                                processes.
                             </p>
                             <a href="#apidocs" class="btn_hover btn_four wow fadeInRight" data-wow-delay="0.6s">API
                                 Documentation</a>
@@ -525,7 +517,8 @@ HTTP/2.0 200 OK
                     <div class="col-lg-6">
                         <div class="tab_img_info">
                             <div class="tab_img active" id="tab_one">
-                                <div id="termynal" data-termynal data-ty-typeDelay="10" data-ty-startDelay="600">
+                                <div id=" termynal-container" data-termynal data-ty-typeDelay="10"
+                                    data-ty-startDelay="600">
                                     <span data-ty="input">curl --request POST https://api.abetterpreta.com/certificate
                                         --data '{"base64":"-----BEGIN CERTIFICATE-----.....-----END
                                         CERTIFICATE-----"}' </span>
@@ -545,7 +538,8 @@ HTTP/2.0 200 OK
                                 </div>
                             </div>
                             <div class="tab_img" id="tab_two">
-                                <div id="termynal" data-termynal data-ty-typeDelay="40" data-ty-startDelay="600">
+                                <div id=" termynal-container" data-termynal StartDelay="500" data-ty-typeDelay="40"
+                                    data-ty-startDelay="600">
                                     <span data-ty="input">curl --request GET
                                         https://api.abetterpreta.com/validation<br>
                                         --header "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",<br>
@@ -555,11 +549,12 @@ HTTP/2.0 200 OK
                                         "validityStatus":"true", "validityDetails":"European Qualified Certificate for
                                         PSD (EU 1394/22)",
                                         "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
-                                        FinTech AB", "psd2Scopes":["PSP_AS, PSP_PI,
+                                        FinTech AB", "tppCity":"Stockholm", "tppCountry":"SE","psd2Scopes":["PSP_AS,
+                                        PSP_PI,
                                         PSP_AI"],"passPorting":[{"SE":["PSP_AS,
                                         PSP_PI"]},{"AT":["PSP_AS, PSP_PI, PSP_AI"]}],
                                         "ncaName":"Swedish Financial Supervision
-                                        Authority", "ncaCode":"SE-FINA", "authDate":"2019-12-01",
+                                        Authority", "ncaCode":"SE-FINA", "ncaCountry":"SE","authDate":"2019-12-01",
                                         "revokedStatus":"False", "certType":"QWAC", "certName":"Qualified
                                         certificates for
                                         website authentication (Buypass Class 3
@@ -598,12 +593,13 @@ HTTP/2.0 200 OK
                                 <a href="index.html" class="f-logo"><img src="img/logo-4.png"
                                         srcset="img/logo-4-2x.png 2x" alt="logo" style="margin-bottom: 35px"></a>
                                 <ul class="list-unstyled f_list">
-                                    <li><span>Email:</span> <a href="#" class="f_400">go@abetterpreta.com</a>
+                                    <li><a href="#" class="f_400">contact@abetterpreta.com</a>
                                     </li>
-                                    <li><span>Support:</span>by chat
+                                    <p></p>
+                                    <li>Need help? Try the chat
                                         💬
                                     </li>
-                                    <br>
+                                    <li>&nbsp;</li>
                                     <li style="font-size: 0.8em; line-height: 2rem"><span style="color: black">EU
                                             VAT</span><span>
                                             SE5565XXXXXX01<br>
@@ -634,14 +630,14 @@ HTTP/2.0 200 OK
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Trusted Providers</h3>
 
                                 <p>
-                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="width: 200px; opacity:0.5; 
+                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="width: 150px; opacity:0.5; 
                                         -webkit-filter: grayscale(100%);
                                         -moz-filter:    grayscale(100%);
                                         -ms-filter:     grayscale(100%);
                                         -o-filter:      grayscale(100%);">
                                 </p>
                                 <p>
-                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 170px; opacity:0.3;
+                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 110px; opacity:0.3;
                                     -webkit-filter: grayscale(100%);
                                     -moz-filter:    grayscale(100%);
                                     -ms-filter:     grayscale(100%);
@@ -713,7 +709,7 @@ HTTP/2.0 200 OK
     <script src="vendors/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="vendors/termynal.js" data-termynal-container="#termynal"></script>
+    <script src="vendors/termynal.js" data-termynal-container="#termynal-container"></script>
 
 </body>
 

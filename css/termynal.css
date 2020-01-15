@@ -20,7 +20,9 @@
 --color-text-subtle: #9e9e9e;
 }
 
-[data-termynal] {
+[data-termynal],
+[data-termynal-req],
+[data-termynal-res] {
     max-width: 100%;
     background: var(--color-bg);
     color: var(--color-text);
@@ -33,7 +35,9 @@
             box-sizing: border-box;
 }
 
-[data-termynal]:before {
+[data-termynal]:before,
+[data-termynal-req]:before,
+[data-termynal-res]:before {
     content: '';
     position: absolute;
     top: 15px;
@@ -48,8 +52,8 @@
             box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
 }
 
-[data-termynal]:after {
-    content: 'bash';
+[data-termynal-req]:after {
+    content: 'Request (example)';
     position: absolute;
     color: var(--color-text-subtle);
     top: 5px;
@@ -57,7 +61,15 @@
     width: 100%;
     text-align: center;
 }
-
+[data-termynal-res]:after {
+    content: 'Response (example)';
+    position: absolute;
+    color: var(--color-text-subtle);
+    top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
 [data-ty] {
     display: block;
     line-height: 1.5;
