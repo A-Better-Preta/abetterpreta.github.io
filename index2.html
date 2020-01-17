@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="img/icons/favicon2.png" type="image/x-icon">
+    <meta property="og:title" content="A Better Preta | TPP Validation as it should be | Compliance-as-a-Service" />
+    <meta property="og:image" content="https://abetterpreta.com/img/shared.jpg" />
+    <meta property="og:description" content="TPP Validation as it should be." />
+    <meta property="og:url" content="https://abetterpreta.com" />
     <title>A Better Preta | Compliance-as-a-Service | Commission Delegated Regulation (EU) 2018/389 (RTS) Article 34
     </title>
     <!-- Bootstrap CSS -->
@@ -27,35 +31,45 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon2.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon2.png">
-    <!link rel="manifest" href="/site.webmanifest">
-        <!-- Start of Async Drift Code -->
-        <script>
-            "use strict";
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Start of Async Drift Code -->
+    <script>
+        "use strict";
 
-            !function () {
-                var t = window.driftt = window.drift = window.driftt || [];
-                if (!t.init) {
-                    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-                    t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
-                        t.factory = function (e) {
-                            return function () {
-                                var n = Array.prototype.slice.call(arguments);
-                                return n.unshift(e), t.push(n), t;
-                            };
-                        }, t.methods.forEach(function (e) {
-                            t[e] = t.factory(e);
-                        }), t.load = function (t) {
-                            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-                            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                            var i = document.getElementsByTagName("script")[0];
-                            i.parentNode.insertBefore(o, i);
+        !function () {
+            var t = window.driftt = window.drift = window.driftt || [];
+            if (!t.init) {
+                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+                t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+                    t.factory = function (e) {
+                        return function () {
+                            var n = Array.prototype.slice.call(arguments);
+                            return n.unshift(e), t.push(n), t;
                         };
-                }
-            }();
-            drift.SNIPPET_VERSION = '0.3.1';
-            drift.load('sben4re9zv52');
-        </script>
-        <!-- End of Async Drift Code -->
+                    }, t.methods.forEach(function (e) {
+                        t[e] = t.factory(e);
+                    }), t.load = function (t) {
+                        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+                        var i = document.getElementsByTagName("script")[0];
+                        i.parentNode.insertBefore(o, i);
+                    };
+            }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('sben4re9zv52');
+    </script>
+    <!-- End of Async Drift Code -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110940667-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110940667-6');
+    </script>
+
 </head>
 
 <body>
@@ -256,17 +270,20 @@
                                     identification. TPPs identification shall rely on a qualified certificate, as
                                     defined in EU Regulation 910/2014 (eIDAS).</p>
                                 <p>
-                                    <b>TL;DR</b>, all ASPSPs must make sure all TPP PSD2 access requests are made by
+                                    <b>In summary</b>, all ASPSPs must make sure all TPP PSD2 access requests are made
+                                    by
                                     their
                                     respective certificate holder, having a valid PSD2 eIDAS certificate issued by
                                     a compliant Qualified Trust Service Provider (QTSP).
                                 </p>
                                 <p>&nbsp;</p>
-                                <h1>As a service</h1>
-                                <p>A Better Preta conveniently handles the processes of certificate validation, QTSP
+                                <h1>as a Service</h1>
+                                <p>A Better Preta conveniently handles the processes of Third Party Provider (TPP)
+                                    regulatory status checking, QTSP
                                     status
-                                    verification, certificates Passporting information and other information with a
-                                    simple request that delivers a super fast yet reliable
+                                    verification, cross checking TPP and QTSP against NCA registers while also
+                                    presenting complete TPP Passporting information, all in a
+                                    single and simple API request that delivers a super fast and reliable
                                     response.</p>
                                 <p>Our paid subscription plans includes full traceability covering all compliance
                                     needs out of the box. Services are delivered in standard JSON in single REST API
@@ -373,7 +390,7 @@ HTTP/2.0 200 OK
     "tppId":"PSDSE-FINA-1337",
     "tppShort":"Gogo1337.io",
     "tppName":"Swedish 1337 FinTech AB",
-    "tppCity":"Stockholm"
+    "tppCity":"Stockholm"m,
     "tppCountry":"SE"
     "psd2Scopes":[
         "PSP_AS, PSP_PI, PSP_AI"],
@@ -383,7 +400,7 @@ HTTP/2.0 200 OK
     }],
     "ncaName":"Swedish Financial Supervision Authority",
     "ncaCode":"SE-FINA",
-    "ncaCountry":"SE"
+    "ncaCountry":"SE",
     "authDate":"2019-12-01",
     "revokedStatus":"False",
     "certType":"QWAC",
@@ -488,14 +505,16 @@ HTTP/2.0 200 OK
                                         by submitting a
                                         single request including the TPP certificate as-is.<br>
                                     </p>
-                                    <p class="mb_40">Thats it! Getting TPPs onboard couldn't be easier.</p>
+                                    <p class="mb_40">A compressed response will include selected necessary
+                                        information to grant or deny access to your PSD2 APIs.</p>
+                                    <p class="mb_40">Thats it! Getting TPPs onboard simplified, for you.</p>
                                 </div>
                                 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab">
                                     <p class="mb_40">Pipe the certificate of an incoming PSD2 API request
                                         or optionally and slimmer, use its fingerprint. Together with your
                                         <b>subscriptionId</b>, you're done.</p>
-                                    <p class="mb_40">You will get the
-                                        response in milliseconds with real
+                                    <p class="mb_40">You will get a
+                                        response in milliseconds with executed real
                                         time verification and coherent EBA validations to rest assured that any
                                         incoming
                                         TPP request can be signed off as fully compliant at the time of the request.</p>
@@ -589,14 +608,12 @@ HTTP/2.0 200 OK
                                         💬
                                     </li>
                                     <li>&nbsp;</li>
-                                    <li style="font-size: 0.8em; line-height: 2rem"><span style="color: black">EU
-                                            VAT</span><span>
-                                            SE5565XXXXXX01<br>
-                                            <span style="color: black">
-                                                WHERE</span>
-                                            Regeringsgatan 29<br>
-                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Stockholm,
-                                            SE
+                                    <li style="font-size: 0.8em; line-height: 2rem">
+                                        <span style="color: black">
+                                            WHERE</span>
+                                        Regeringsgatan 29<br>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Stockholm,
+                                        SE
                                     </li>
                                 </ul>
                             </div>
@@ -639,6 +656,10 @@ HTTP/2.0 200 OK
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Legal</h3>
                                 <p style="font-size: 0.8em; line-height: 2rem">
                                     <a class="t_color"
+                                        href="https://eba.europa.eu/regulation-and-policy/payment-services-and-electronic-money/regulatory-technical-standards-on-strong-customer-authentication-and-secure-communication-under-psd2">RTS
+                                        on SCA and CSC.
+                                        34</a><br>
+                                    <a class="t_color"
                                         href="https://eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/5402">
                                         EBA Interactive Single Rulebook
                                     </a><br>
@@ -646,8 +667,8 @@ HTTP/2.0 200 OK
                                         href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018R0389&from=EN">Official
                                         Journal of the European Union</a><br>
                                     <a class="t_color"
-                                        href="https://www.enisa.europa.eu/topics/trust-services/security-measures">
-                                        European Union Agency for Cybersecurity
+                                        href="https://www.enisa.europa.eu/topics/trust-services/technical-guidance-on-qualified-trust-services">
+                                        Technical guidance on QTS
                                     </a>
                                 </p>
                             </div>
