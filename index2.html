@@ -729,7 +729,20 @@ HTTP/1.1 200 OK
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
     <script>
-        $('#tpps').load('tpps.txt');
+        function load() {
+            var file = new XMLHttpRequest();
+            file.open("GET", "https://abetterpreta.com/tpps.txt", true);
+            file.onreadystatechange = function () {
+                if (file.readyState === 4) {  // Makes sure the document is ready to parse
+                    if (file.status === 200) {  // Makes sure it's found the file
+                        text = file.responseText;
+                        document.getElementById("tpps").innerHTML = text;
+                    }
+                }
+            }
+        }
+
+        window.onLoad = load();
     </script>
 </body>
 
