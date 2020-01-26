@@ -158,7 +158,14 @@
                                 <a href="https://www.youtube.com/watch?v=VM-2OVNt-eQ" class="video_btn popup-youtube">
                                     <div class="icon"><i class="ti-control-play"></i></div><span>Watch Video</span>
                                 </a>-->
+
                             </div>
+
+
+                            <p class="f_size_12 l_height10 mt_30 wow fadeInLeft"
+                                style="font-size: 0.8em; line-height: 2rem; margin-top: 100px;" data-wow-delay="1.0s">A
+                                Better
+                                Preta is not an affiliate of Preta. Validations are done realtime with EBA/NCAs.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -181,7 +188,7 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span style="font-size: 6em;">237</span>
+                                <h1 class="t_color3"><span #="tpps" style="font-size: 6em;"></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -200,7 +207,7 @@
                                 maintain and publish trusted lists of qualified trust service providers and the
                                 qualified trust services provided by them. Looking at the numbers it's not
                                 an
-                                understatement to say it could be cumbersum for anyone to keep their records straight.
+                                understatement to say it could be cumbersome for anyone to keep their records straight.
                             </p>
                             <div class="d-flex">
                                 <div class="fact_item">
@@ -316,7 +323,7 @@
                             <div class="icon icon_three"><i class="ti-bar-chart-alt"></i></div>
                             <h5 class="f_600 f_p t_color3">Reduce your OpEx</h5>
                             <p class="f_400">Cut your running costs with A Better Preta, no servers, no
-                                licensees, no maintenance, no staffing. Enjoy <u>Compliance-as-a-Service</u>.</p>
+                                licenses, no maintenance, no staffing. Enjoy <u>Compliance-as-a-Service</u>.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
@@ -341,7 +348,7 @@
                             <div class="icon icon_three"><i class="ti-link"></i></div>
                             <h5 class="f_600 f_p t_color3">Supports all QTSPs</h5>
                             <p class="f_400">No more manual QTSP onboarding. No more sloppy validations.
-                                A Better Preta validates certificates from all valid QTSPs in realtime.</p>
+                                A Better Preta validate certificates from all valid QTSPs in realtime.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
@@ -383,9 +390,9 @@
                             <div id="termynal" data-light data-termynal-res>
                                 <span data-ty startDelay="1500">
                                     <pre style="overflow: hidden">
-HTTP/2.0 200 OK
+HTTP/1.1 200 OK
 {
-    "validityStatus":"true",
+    "isValid":"true",
     "validityDetails":"European Qualified Certificate for PSD (EU 1394/22)",
     "tppId":"PSDSE-FINA-1337",
     "tppShort":"Gogo1337.io",
@@ -401,11 +408,11 @@ HTTP/2.0 200 OK
     "ncaName":"Swedish Financial Supervision Authority",
     "ncaCode":"SE-FINA",
     "ncaCountry":"SE",
-    "authDate":"2019-12-01",
-    "revokedStatus":"False",
+    "ncaAuthored":"2019-12-01",
+    "certRevoked":"False",
     "certType":"QWAC",
-    "certName":"Qualified certificates for website authentication (Buypass Class 3 CA 2)",
-    "certIssuer":"Buypass Class 3 CA 3",
+    "certName":"Buypass Class 3 CA 2",
+    "certIssuer":"Buypass AS-983163327",
     "certIssuerCountry":"NO",
     "certValidFrom":"2019-12-25",
     "certValidTo":"2021-12-24",
@@ -457,14 +464,15 @@ HTTP/2.0 200 OK
                         <div class="software_featured_content">
                             <h2 class="f_700 f_size30 l_height_40 w_color f_p mb-30 wow fadeInRight"
                                 data-wow-delay="0.2s">
-                                Effortless and free certificate validation with a simple POST.
+                                Automate TPP onboarding with a simple POST request.
                             </h2>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">Our free self service
                                 for certificate validation are available not only for ASPSPs but also any TPP that
                                 wishes to smoothen their future interactions with ASPSPs and their onboarding
                                 processes, while also reviewing current validation status together with
-                                additional information such as the SHA-1 & SHA-256 fingerprint details, often used for
-                                simplifications.
+                                additional information such as the SHA-1 & SHA-256 fingerprints, commonly used
+                                for
+                                simplification.
                             </p>
                             <p class="w_color f_400 mb_50 wow fadeInRight" data-wow-delay="0.4s">
                                 By using this service ASPSPs can now fully automate their often manual and costly TPP
@@ -530,7 +538,7 @@ HTTP/2.0 200 OK
                                     <span data-ty="input">curl --request POST https://api.abetterpreta.com/certificate
                                         --data '{"base64":"-----BEGIN CERTIFICATE-----.....-----END
                                         CERTIFICATE-----"}' </span>
-                                    <span data-ty startDelay="50"><br>HTTP/2.0 200 OK<br>
+                                    <span data-ty startDelay="50"><br>HTTP/1.1 200 OK<br>
                                         {
                                         "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
                                         FinTech AB", "ncaName":"Swedish Financial Supervision Authority",
@@ -553,8 +561,8 @@ HTTP/2.0 200 OK
                                         --header "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",<br>
                                         "subscriptionId: demo1337demo"
                                     </span>
-                                    <span data-ty startDelay="20"><br>HTTP/2.0 200 OK<br>{
-                                        "validityStatus":"true", "validityDetails":"European Qualified Certificate for
+                                    <span data-ty startDelay="20"><br>HTTP/1.1 200 OK<br>{
+                                        "isValid":"true", "validityDetails":"European Qualified Certificate for
                                         PSD (EU 1394/22)",
                                         "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
                                         FinTech AB", "tppCity":"Stockholm", "tppCountry":"SE","psd2Scopes":["PSP_AS,
@@ -562,8 +570,8 @@ HTTP/2.0 200 OK
                                         PSP_AI"],"passPorting":[{"SE":["PSP_AS,
                                         PSP_PI"]},{"AT":["PSP_AS, PSP_PI, PSP_AI"]}],
                                         "ncaName":"Swedish Financial Supervision
-                                        Authority", "ncaCode":"SE-FINA", "ncaCountry":"SE","authDate":"2019-12-01",
-                                        "revokedStatus":"False", "certType":"QWAC", "certName":"Qualified
+                                        Authority", "ncaCode":"SE-FINA", "ncaCountry":"SE","ncaAuthored":"2019-12-01",
+                                        "certRevoked":"False", "certType":"QWAC", "certName":"Qualified
                                         certificates for
                                         website authentication (Buypass Class 3
                                         CA 2)", "certIssuer":"Buypass Class 3 CA 3", "certIssuerCountry":"NO",
@@ -720,6 +728,9 @@ HTTP/2.0 200 OK
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
+    <script>
+        $('#tpps').load('tpps.txt');
+    </script>
 </body>
 
 </html>
