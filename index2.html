@@ -188,7 +188,8 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;"></span>
+                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;"><object
+                                            type="multipart/form-data" data=" tpps.txt"></object></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -729,20 +730,7 @@ HTTP/1.1 200 OK
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
     <script>
-        function load() {
-            var file = new XMLHttpRequest();
-            file.open("GET", "https://abetterpreta.com/tpps.txt", true);
-            file.onreadystatechange = function () {
-                if (file.readyState === 4) {  // Makes sure the document is ready to parse
-                    if (file.status === 200) {  // Makes sure it's found the file
-                        text = file.responseText;
-                        document.getElementById("tpps").innerHTML = text;
-                    }
-                }
-            }
-        }
-
-        window.onLoad = load();
+        $("#tpps").load("https://abetterpreta.com/tpps.txt");
     </script>
 </body>
 
