@@ -146,7 +146,7 @@
         <!--============= Shopping Cart ===============-->
         <section class="checkout_area bg_color sec_pad">
             <div class="container">
-                <form action="#" method="post">
+                <form name="submit-to-google-sheet">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="checkout_content">
@@ -156,24 +156,24 @@
                                 </h3>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="First Name">
+                                        <input type="text" placeholder="First Name" name="firstName" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Last Name">
+                                        <input type="text" placeholder="Last Name" name="lastName" required>
                                     </div>
 
                                     <div class="col-lg-7">
-                                        <input type="text" placeholder="Email address">
+                                        <input type="text" placeholder="Email address" name="email" required>
                                     </div>
                                     <div class="col-lg-5">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="text" placeholder="Phone" name="phone" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Role">
+                                        <input type="text" placeholder="Role" name="role">
                                     </div>
 
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Department">
+                                        <input type="text" placeholder="Department" name="department">
                                     </div>
 
                                 </div>
@@ -184,40 +184,32 @@
                                 <div class="row">
 
                                     <div class="col-md-9">
-                                        <input type="text" placeholder="Legal entity">
+                                        <input type="text" placeholder="Legal entity" name="entity" required>
                                     </div>
 
                                     <div class="col-lg-3">
-                                        <input type="text" placeholder="PO #">
+                                        <input type="text" placeholder="PO #" name="po">
                                     </div>
 
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="EU VAT">
+                                        <input type="text" placeholder="EU VAT" name="euVat" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Full street address">
+                                        <input type="text" placeholder="Full street address" name="streetAddress"
+                                            required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="ZIP Code">
+                                        <input type="text" placeholder="ZIP Code" name="zipCode" required>
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="City">
+                                        <input type="text" placeholder="City" name="city" required>
                                     </div>
 
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Country">
+                                        <input type="text" placeholder="Country" name="country" required>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <label>Order Notes</label>
-                                        <textarea
-                                            placeholder="Notes about your arder, e.g. special notes for delivery"></textarea>
-                                    </div>
-                                </div>
-                            -->
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -250,40 +242,6 @@
                                     <p style="font-size: 0.8em; line-height: 2rem">Legal Swedish entities will have an
                                         additional 25% sales tax, Moms, added to the invoice amount.
                                     </p>
-
-                                    <!--
-                                    <ul class="list-unstyled payment_list">
-                                        <li class="payment">
-                                            <div class="radio-btn">
-                                                <input type="checkbox" value="None" id="squaredsix" name="check">
-                                                <label for="squaredsix"></label>
-                                            </div>
-                                            <h6>Direct Bank Transfer</h6>
-                                            <div class="note">
-                                                Make your payment directty into our bank account. Please use your
-                                                Order
-                                                ID
-                                                as the payment reference. Your arder won't be shipped until the
-                                                funds
-                                                have
-                                                cleared in our account.
-                                            </div>
-                                        </li>
-                                        <li class="payment">
-                                            <div class="radio-btn">
-                                                <input type="checkbox" value="None" id="squaredseven" name="check">
-                                                <label for="squaredseven"></label>
-                                            </div>
-                                            <h6>Credit Card Payment</h6>
-                                        </li>
-                                        <li class="payment">
-                                            <div class="radio-btn">
-                                                <input type="checkbox" value="None" id="squaredeight" name="check">
-                                                <label for="squaredeight"></label>
-                                            </div>
-                                            <h6>Invoice</h6>
-                                        </li>
-                                    </ul>-->
                                     <div class="condition">
                                         <p>
                                             <b>Please note:</b> All orders comes with a trial period of 30 days, any
@@ -304,7 +262,7 @@
                                             throughout this website, and for other purposes described in our privacy
                                             policy.
                                         </p>
-                                        <input type="checkbox" value="None" id="squarednine" name="check">
+                                        <input type="checkbox" value="None" id="squarednine" name="check" required>
                                         <label class="l_text" for="squarednine">I have read and agree to the website
                                             terms
                                             and conditions <span>*</span></label>
@@ -450,6 +408,18 @@
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
     <script src="vendors/counterup/jquery.counterup.min.js"></script>
     <script src="vendors/counterup/jquery.waypoints.min.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz-IN6avhY1sOTr3HLHyvxsh_iQFQfFVMsaw2L-5kLdnfXI6xA/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
 </body>
 
 </html>
