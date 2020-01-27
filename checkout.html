@@ -146,7 +146,7 @@
         <!--============= Shopping Cart ===============-->
         <section class="checkout_area bg_color sec_pad">
             <div class="container">
-                <form name="submit-to-google-sheet">
+                <form action="https://formspree.io/xdognker" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="checkout_content">
@@ -163,7 +163,7 @@
                                     </div>
 
                                     <div class="col-lg-7">
-                                        <input type="text" placeholder="Email address" name="email" required>
+                                        <input type="text" placeholder="Email address" name="_replyto" required>
                                     </div>
                                     <div class="col-lg-5">
                                         <input type="text" placeholder="Phone" name="phone" required>
@@ -267,7 +267,7 @@
                                             terms
                                             and conditions <span>*</span></label>
                                     </div>
-                                    <button type="submit" class="button">Place Order</button>
+                                    <button type="submit" class="button" value="Send">Place Order</button>
                                 </div>
                             </div>
                         </div>
@@ -408,6 +408,7 @@
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
     <script src="vendors/counterup/jquery.counterup.min.js"></script>
     <script src="vendors/counterup/jquery.waypoints.min.js"></script>
+    <!--
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz-IN6avhY1sOTr3HLHyvxsh_iQFQfFVMsaw2L-5kLdnfXI6xA/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -419,7 +420,7 @@
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
-
+-->
 </body>
 
 </html>
