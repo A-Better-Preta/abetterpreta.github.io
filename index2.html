@@ -154,13 +154,7 @@
                             <div class="action_btn d-flex align-items-center mt_40 wow fadeInLeft"
                                 data-wow-delay="0.6s">
                                 <a href="#signup" class="software_banner_btn">Get Early Access</a>
-                                <!--
-                                <a href="https://www.youtube.com/watch?v=VM-2OVNt-eQ" class="video_btn popup-youtube">
-                                    <div class="icon"><i class="ti-control-play"></i></div><span>Watch Video</span>
-                                </a>-->
-
                             </div>
-
 
                             <p class="f_size_12 l_height10 mt_30 wow fadeInLeft"
                                 style="font-size: 0.8em; line-height: 2rem; margin-top: 100px;" data-wow-delay="1.0s">A
@@ -188,8 +182,8 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;"><object
-                                            type="multipart/form-data" data=" tpps.txt"></object></span>
+                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;" class="counter fadeInRight"
+                                        data-count=244></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -729,9 +723,8 @@ HTTP/1.1 200 OK
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
-    <script>
-        $("#tpps").load("https://abetterpreta.com/tpps.txt");
-    </script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
 </body>
 
 </html>
