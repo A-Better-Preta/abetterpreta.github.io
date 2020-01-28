@@ -182,11 +182,12 @@
                                 <div class="row">
 
                                     <div class="col-md-9">
-                                        <input type="text" placeholder="Legal entity" name="entity" required>
+                                        <input type="text" title="required" placeholder="Legal entity" name="entity"
+                                            required>
                                     </div>
 
                                     <div class="col-lg-3">
-                                        <input type="text" placeholder="PO #" name="po">
+                                        <input type="text" placeholder="PO/Ref" name="po">
                                     </div>
 
                                     <div class="col-md-12">
@@ -238,7 +239,7 @@
                                     </table>
 
                                     <p style="font-size: 0.8em; line-height: 2rem">Legal entities based in Sweden will
-                                        recieve an
+                                        receive an
                                         additional 25% sales tax, moms, added to the invoice amount.
                                     </p>
                                     <div class="condition">
@@ -251,7 +252,7 @@
                                         <p>During the trial period a trial subscription key will be submitted with some
                                             limitations in place such as rate-limiting and query quotas.</p>
                                         <p>
-                                            Once orders are fully payed you will get a replacement subscription key,
+                                            Once orders are paid you will get a replacement subscription key,
                                             valid for the full subscription period.
                                         </p>
                                         <p>&nbsp;</p>
@@ -261,10 +262,15 @@
                                             throughout this website, and for other purposes described in our privacy
                                             policy.
                                         </p>
-                                        <input type="checkbox" value="None" id="squarednine" name="check" required>
-                                        <label class="l_text" for="squarednine">I have read and agree to the website
-                                            terms
-                                            and conditions <span>*</span></label>
+                                        <div class="control-group">
+                                            <label class="control control-checkbox">
+                                                <input class="control control-group control-checkbox" type="checkbox"
+                                                    required>
+                                            </label>
+                                            <label class="l_text" for="squarednine">I have read and agree to the website
+                                                terms
+                                                and conditions <span>*</span></label>
+                                        </div>
                                     </div>
                                     <button type="submit" class="button" value="Send">Place Order</button>
                                 </div>
