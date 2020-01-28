@@ -305,13 +305,16 @@
         <section class="agency_about_area d-flex bg_color">
             <div class="col-lg-6 about_content_left">
                 <div class="about_content mb_30">
-                    <h2 class="f_size_30 f_700 l_height45 mb_20">What are covered by this service?</h2>
-                    <p>For ASPSPs the service covers all necessities to grant access for a
+                    <h2 class="f_size_30 f_700 l_height45 mb_20">What steps are covered by this service?</h2>
+                    <p>For ASPSPs the service covers all necessary steps to grant access for a
                         TPP. Every time a TPP attempts to access your PSD2 APIs, our service can be used to authenticate
                         and check the authorization of the TPP in real-time.</p>
                     <p>Depending on local interpretations of
-                        Article 34 validations can be used for all incoming requests or used together with local caching
+                        Article 34 validations can be used for all incoming requests or used together with locally
+                        applied caching
                         policies.</p>
+                    <p>Audit trails are built in by default and like the above steps more detailed here next.</p>
+                    <p>All of these steps are represented in the response of one single API request.</p>
                 </div>
             </div>
             <div class="col-lg-6 about_img">
@@ -323,7 +326,7 @@
                                 <h2 class="f_size_24 f_700 l_height45">Authentication</h2>
                                 <span class="br"></span>
                                 <h5 class="f_size_16 l_height28 mb-0">Validation are done real-time to
-                                    verify incoming TPP's
+                                    verify that incoming TPP's
                                     certificate are valid qualified eIDAS certificate, as defined in EU Regulation
                                     910/2014, issued by a QTSP and that the certificate is still valid (i.e. not revoked
                                     by the QTSP). QTSPs are also verified to rest assure their authored status.</h5>
@@ -332,12 +335,11 @@
                         <div class="about_item w55">
                             <img src="img/544443.jpg" alt="">
                             <div class="about_text text_two">
-
                                 <h2 class="f_size_24 f_700 l_height35">Authorization</h2>
                                 <span class="br"></span>
                                 <h5 class="f_size_16 l_height28 mb-0">Real-time regulatory status of the
                                     TPP itself including its passporting rights. We hold an up-to-date
-                                    register of the legal status of all TPPs within the current 30 EU member states.
+                                    register of the legal statuses of all TPPs within the current 31 EU member states.
                                     Should the regulatory
                                     status of a TPP change, it will immediately be reflected in our API response.</h5>
                             </div>
@@ -350,7 +352,7 @@
                                 <span class="br"></span>
                                 <h5 class="f_size_16 l_height28 mb-0">All underlying information is logged, allowing
                                     each
-                                    request to be traced back to its source at EBA, NCA,
+                                    request to be traced back to its source at EBA, NCAs,
                                     and QTSPs in case of disputes.</h5>
                             </div>
                         </div>
