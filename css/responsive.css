@@ -2411,6 +2411,9 @@
     .menu {
         background: transparent;
     }
+    .footer_area {
+        padding-top: 20px;
+    }
     .header_area.navbar_fixed .menu_five .btn_get {
         display: block;
         margin-top: 10%;
@@ -2510,7 +2513,7 @@
         padding: 80px 0px;
     }
     .s_pricing_area {
-        padding: 400px 0px;
+        padding-top: 400px;
     }
     .sec_title.mb_70{
         margin-bottom: 50px
