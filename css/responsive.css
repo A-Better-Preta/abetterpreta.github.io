@@ -2390,6 +2390,34 @@
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
         display: none;
     }
+    .menu_one .navbar-collapse {
+        margin-left: -15px;
+        margin-right: -20px;
+        bottom: 0;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+        overflow-y: auto;
+        position: fixed;
+        transition: left .2s;
+        top: 0px;
+        padding-top: 50px;
+        width: 80%;
+        z-index: 1000;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+        height: 100vh;
+        line-height: 3em;
+        max-height: 80vh;
+    }
+    .header_area.navbar_fixed .menu_five .btn_get {
+        display: block;
+        margin-top: 60%;
+        margin-right: 30px;
+    }
+    .header_area.navbar_fixed .menu_five .btn_get {
+        border-color: #3d64f4;
+        background-color: #3d64f4;
+        color: white;
+    }
     .footer_bottom p{
         text-align: center;
         margin-bottom: 12px !important;
@@ -2435,6 +2463,9 @@
     .feedback_slider_two .owl-nav .owl-next,.feedback_slider_two .owl-nav .owl-prev{
         opacity: 1;
     }
+    .s_pricing_area .blur {
+        display: none;
+    }
     .prototype_service_area{
         padding-bottom: 70px;
     }
@@ -2473,7 +2504,10 @@
         padding: 50px 20px;
     }
     .sec_pad,.prototype_service_info{
-        padding: 70px 0px;
+        padding: 80px 0px;
+    }
+    .s_pricing_area {
+        padding: 400px 0px;
     }
     .sec_title.mb_70{
         margin-bottom: 50px
@@ -2496,6 +2530,9 @@
     .developer_product_area{
         padding: 70px 0px;
     }
+    .developer_product_area .tab_img_info {
+        margin-top: 0;
+    }
     .partner_logo_area_two .subscribe_form_info{
         padding: 100px 20px;
     }
@@ -2507,7 +2544,6 @@
     }
     .saas_signup_form .saas_banner_btn{
         margin-top: 40px;
-    
     }
     .fun_fact_content .fact_item.pl_100{
         padding-left: 30px;
@@ -3190,6 +3226,9 @@
     }
     .about_img .about_img_slider .about_item .about_text{
         bottom: 30px;
+    }
+    .about_img .about_img_slider .about_item img {
+        height: 400px !important;
     }
     .software_banner_content h2 {
         font-size: 35px;
