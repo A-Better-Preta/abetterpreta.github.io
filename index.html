@@ -113,19 +113,19 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pricing" role="button">
-                                    Pricing
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="#apidocs" role="button">
                                     API Docs
                                 </a>
 
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pricing" role="button">
+                                    Pricing
+                                </a>
+
+                            </li>
                         </ul>
-                        <a class="btn_get btn_get_radious menu_cus menu_custfive" href="#signup">Early Access</a>
+                        <a class="btn_get btn_get_radious menu_cus menu_custfive" href="checkout.html">Order Service</a>
                     </div>
                 </div>
             </nav>
@@ -185,7 +185,7 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;">244</span>
+                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;"></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -252,7 +252,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row agency_featured_item agency_featured_item_two" id="service">
+                    <div class="row agency_featured_item agency_featured_item_two">
                         <div class="col-lg-6">
                             <div class="agency_featured_img wow fadeInLeft" data-wow-delay="0.2s">
                                 <img src="img/eidas-wheel.png" alt="">
@@ -302,7 +302,7 @@
                     </div>
                 </div>
         </section>
-        <section class="agency_about_area d-flex bg_color">
+        <section class="agency_about_area d-flex bg_color" id="service">
             <div class="col-lg-6 about_content_left">
                 <div class="about_content mb_30">
                     <h2 class="f_size_30 f_700 l_height45 mb_20">What steps are covered by this service?</h2>
@@ -483,9 +483,7 @@ HTTP/1.1 200 OK
                         <div class="design_img_two wow fadeInRight" data-wow-delay="0.4s">
                             <div id="termynal" data-termynal-req data-ty-typeDelay="40">
                                 <span data-ty="input">curl --request GET
-                                    https://api.abetterpreta.com/validation<br>
-                                    --header "subscriptionId: demo1337demo",
-                                    "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6"</span>
+                                    https://api.abetterpreta.com/get/validation?sha1=1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6&subscriptionId=yourkey</span>
                             </div>
                         </div>
                     </div>
@@ -495,18 +493,6 @@ HTTP/1.1 200 OK
                 </div>
             </div>
         </section>
-        <section class="s_pricing_area sec_pad" id="pricing">
-            <div class="container custom_container">
-                <div class="sec_title text-center mb_70">
-                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Compliance tends to be expensive. A Better Preta
-                        sure is not. Stay tuned!</h2>
-                    <p class="f_400 f_size_18 l_height34">Disruption comes from innovation and simplification.
-                        Affordable simplification will give room for innovation.</p>
-                </div>
-
-            </div>
-        </section>
-
         <section class="software_featured_area_two sec_pad">
             <div class="container">
                 <div class="row">
@@ -553,12 +539,12 @@ HTTP/1.1 200 OK
                             <ul class="nav nav-tabs develor_tab mb-30" id="myTab2" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-tab="tab_one" id="aspsp-tab" data-toggle="tab"
-                                        href="#aspsp" role="tab" aria-controls="aspsp" aria-selected="true"><b>POST</b>
-                                        /certificate</a>
+                                        href="#aspsp" role="tab" aria-controls="aspsp"
+                                        aria-selected="true"><b>post</b>/certificate</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-tab="tab_two" id="curl-tab" data-toggle="tab" href="#curl"
-                                        role="tab" aria-controls="curl" aria-selected="false"><b>GET</b> /validation</a>
+                                        role="tab" aria-controls="curl" aria-selected="false"><b>get</b>/validation</a>
                                 </li>
                             </ul>
                             <div class="tab-content developer_tab_content">
@@ -590,10 +576,12 @@ HTTP/1.1 200 OK
                         <div class="tab_img_info">
                             <div class="tab_img active" id="tab_one">
                                 <div id="termynal" data-termynal data-ty-typeDelay="10" data-ty-startDelay="600">
-                                    <span data-ty="input">curl --request POST https://api.abetterpreta.com/certificate
-                                        --data '{"base64":"-----BEGIN CERTIFICATE-----.....-----END
-                                        CERTIFICATE-----"}' </span>
-                                    <span data-ty startDelay="50"><br>HTTP/1.1 200 OK<br>
+                                    <span data-ty="input">curl --request POST
+                                        https://api.abetterpreta.com/post/certificate
+                                        --header 'content-type/application-json' --data '{ "base64" : "-----BEGIN
+                                        CERTIFICATE-----.....-----END
+                                        CERTIFICATE-----" }' </span>
+                                    <span data-ty startDelay="50"><br>HTTP/1.1 201 CREATED<br>
                                         {
                                         "tppId":"PSDSE-FINA-1337", "tppShort":"Gogo1337.io", "tppName":"Swedish 1337
                                         FinTech AB", "ncaName":"Swedish Financial Supervision Authority",
@@ -612,9 +600,7 @@ HTTP/1.1 200 OK
                                 <div id="termynal" data-termynal StartDelay="500" data-ty-typeDelay="40"
                                     data-ty-startDelay="600">
                                     <span data-ty="input">curl --request GET
-                                        https://api.abetterpreta.com/validation<br>
-                                        --header "sha1:1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6",<br>
-                                        "subscriptionId: demo1337demo"
+                                        https://api.abetterpreta.com/get/validation?sha1=1337F7E3799A4FDF90A992AA7DE030CC33F2B8E6&subscriptionId=yourkey
                                     </span>
                                     <span data-ty startDelay="20"><br>HTTP/1.1 200 OK<br>{
                                         "isValid":"true", "validityDetails":"European Qualified Certificate for
@@ -641,17 +627,82 @@ HTTP/1.1 200 OK
                 </div>
             </div>
         </section>
-        <section class="partner_logo_area_two" id="signup">
-            <div class="container">
-                <h4 class="f_size_32 f_600 f_p text-center l_height28 mb_70">Stay ahead. Become an early adopter.</h4>
-                <div class="subscribe_form_info text-center">
-                    <h2 class="f_600 f_size_30 l_height30 t_color3 mb_50">Sign up now and get early bird discount.</h2>
-                    <form class="mailchimp subscribe-form" method="post">
-                        <input type="text" name="EMAIL" class="form-control memail" placeholder="Your business email">
-                        <button type="submit" class="btn_hover btn_four mt_40">Sign Up</button>
-                        <p class="mchimp-errmessage" style="display: none;"></p>
-                        <p class="mchimp-sucmessage" style="display: none;"></p>
-                    </form>
+        <section class="s_pricing_area sec_pad" id="pricing">
+            <div class="container custom_container">
+                <div class="sec_title text-center mb_70">
+                    <h1 class="t_color3 f_p f_700 mb_20">So what about pricing then?</h1>
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Compliance tends to be expensive. A Better Preta
+                        sure is not.<br>We just made it dead simple. One price for everyone.</h2><br>
+                    <p class="f_400 f_size_18 l_height34">Disruption comes from innovation and simplification.<br>
+                        Affordable simplification will give room for innovation.</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-sm-6" style="filter: blur(8px);opacity: 0.8;">
+                        <div class="s_pricing-item">
+                            <img class="shape_img" src="img/saas/price_line1.png" alt="">
+                            <div class="s_price_icon p_icon1">
+                                <i class="flaticon-mortarboard"></i>
+                            </div>
+                            <h5 class="f_p f_600 f_size_20 t_color mb-0 mt_40">Curious</h5>
+                            <p class="f_p f_400">Create your first integrations</p>
+                            <div class="price f_size_40 f_p f_700">€99<sub class="f_400 f_size_16">/ mo<br>Monthly
+                                    payment</sub></div>
+                            <ul class="list-unstyled mt_30">
+                                <li>Limited TPP validations</li>
+                                <li>Low latency</li>
+                                <li>High availability</li>
+                                <li>Looking for clues?</li>
+                            </ul>
+                            <span href="#" class="price_btn btn_hover mt_30">Choose This Plan</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="s_pricing-item software_featured_content"
+                            style="background-image: -webkit-linear-gradient(40deg, #213b92 0%, #3d64f4 100%)">
+                            <img class="shape_img" src="img/saas/price_line2.png" alt="">
+                            <div class="s_price_icon p_icon2">
+                                <i class="flaticon-target"></i>
+                            </div>
+                            <h5 class="f_p f_600 f_size_20 t_color mb-0 mt_40 w_color">Get more, for less</h5>
+                            <p class="f_p f_400" style="color:white">Our only plan</p>
+                            <div class="price f_size_40 f_p f_700" style="color:white">€999<sub class="f_400 f_size_16"
+                                    style="color:white">/
+                                    mo<br>Charged
+                                    annually</sub>
+                            </div>
+                            <ul class="list-unstyled mt_30">
+                                <li style="color:white">30 day trial period</li>
+                                <li style="color:white">Unlimited TPP validations</li style="color:white">
+                                <li style="color:white">Lowest latency</li style="color:white">
+                                <li style="color:white">Highest availability</li style="color:white">
+                                <li style="color:white">Traceability</li style="color:white">
+                                <li style="color:white">Compliance reports</li style="color:white">
+                                <li style="color:white"><i>with more to come...</i></li style="color:white"><br>
+                            </ul>
+                            <a href="checkout.html" class="btn_hover btn_four">Order Service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="s_pricing-item" style="filter: blur(8px);opacity: 0.8;">
+                            <img class="shape_img" src="img/saas/price_line3.png" alt="">
+                            <div class="s_price_icon p_icon3">
+                                <i class="flaticon-lightbulb"></i>
+                            </div>
+                            <h5 class="f_p f_600 f_size_20 t_color mb-0 mt_40">Global</h5>
+                            <p class="f_p f_400">Best of the best</p>
+                            <div class="price f_size_40 f_p f_700">€9999<sub class="f_400 f_size_16">/ mo<br>Charged
+                                    annually</sub></div>
+                            <ul class="list-unstyled mt_30">
+                                <li>Unlimited TPP validations</li>
+                                <li>Ultra secret</li>
+                                <li>Special Ops</li>
+                                <li>CSS Filters are useful</li>
+                                <li>Reading code are we?</li>
+                                <li>Or copy pasting?</li>
+                            </ul>
+                            <span href="#" class="price_btn btn_hover mt_30">Choose This Plan</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -697,20 +748,28 @@ HTTP/1.1 200 OK
                         <div class="col-lg-3 col-md-6">
                             <div class="f_widget about-widget">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Trusted Providers</h3>
-
                                 <p>
-                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="width: 150px; opacity:0.5; 
-                                        -webkit-filter: grayscale(100%);
-                                        -moz-filter:    grayscale(100%);
-                                        -ms-filter:     grayscale(100%);
-                                        -o-filter:      grayscale(100%);">
-                                </p>
-                                <p>
-                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 110px; opacity:0.3;
+                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 120px; opacity:0.3;
                                     -webkit-filter: grayscale(100%);
                                     -moz-filter:    grayscale(100%);
                                     -ms-filter:     grayscale(100%);
                                     -o-filter:      grayscale(100%);">
+                                </p>
+
+                                <p>
+                                    <img class="partners ms" src="img/github_logo.png" style="width: 120px; opacity:0.2;
+                                    -webkit-filter: grayscale(100%);
+                                    -moz-filter:    grayscale(100%);
+                                    -ms-filter:     grayscale(100%);
+                                    -o-filter:      grayscale(100%);">
+                                </p>
+
+                                <p>
+                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="margin-left: 5px; width: 120px; opacity:0.4; 
+                                        -webkit-filter: grayscale(100%);
+                                        -moz-filter:    grayscale(100%);
+                                        -ms-filter:     grayscale(100%);
+                                        -o-filter:      grayscale(100%);">
                                 </p>
                             </div>
                         </div>

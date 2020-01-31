@@ -190,7 +190,10 @@
                                         <input type="text" placeholder="PO/Ref" name="po">
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-8">
+                                        <input type="text" placeholder="Email for digital invoice" name="invoiceEmail">
+                                    </div>
+                                    <div class="col-lg-4">
                                         <input type="text" placeholder="EU VAT" name="euVat" required>
                                     </div>
                                     <div class="col-md-12">
@@ -220,7 +223,7 @@
                                     <table class="shop_table woocommerce-checkout-review-order-table">
                                         <tbody>
                                             <tr class="order_item">
-                                                <td>TPP Validation as a service</td>
+                                                <td>TPP Validation-as-a-service</td>
                                                 <td class="price">€999 monthly</td>
                                             </tr>
                                             <tr class="order_item">
@@ -229,18 +232,23 @@
                                             </tr>
                                             <tr class="subtotal">
                                                 <td class="price">Subtotal</td>
-                                                <td class="price">€11988</td>
+                                                <td class="price">€11988 yearly</td>
+                                            </tr>
+
+                                            <tr class="order_item">
+                                                <td class="price">Q1 *Early Bird Discount*</td>
+                                                <td class="price">-€999</td>
                                             </tr>
                                             <tr class="subtotal order">
                                                 <td class="price">Invoice amount</td>
-                                                <td class="total">€11988</td>
+                                                <td class="total">€10989</td>
                                             </tr>
                                         </tbody>
                                     </table>
 
                                     <p style="font-size: 0.8em; line-height: 2rem">Legal entities based in Sweden will
                                         receive an
-                                        additional 25% sales tax, moms, added to the invoice amount.
+                                        additional 25% sales tax, moms, added to the total invoice amount.
                                     </p>
                                     <div class="condition">
                                         <p>
@@ -263,7 +271,7 @@
                                             policy.
                                         </p>
                                         <input type="checkbox" value="None" id="squarednine" name="check" required>
-                                        <label class="l_text" for="squarednine">I have read and agree to the website
+                                        <label class="l_text" for="squarednine">I have read and agree to the service
                                             terms
                                             and conditions <span>*</span></label>
                                     </div>
@@ -320,20 +328,28 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="f_widget about-widget">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Trusted Providers</h3>
-
                                 <p>
-                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="width: 150px; opacity:0.5; 
-                                        -webkit-filter: grayscale(100%);
-                                        -moz-filter:    grayscale(100%);
-                                        -ms-filter:     grayscale(100%);
-                                        -o-filter:      grayscale(100%);">
-                                </p>
-                                <p>
-                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 110px; opacity:0.3;
+                                    <img class="partners ms" src="img/microsoft-azure.png" style="width: 120px; opacity:0.3;
                                     -webkit-filter: grayscale(100%);
                                     -moz-filter:    grayscale(100%);
                                     -ms-filter:     grayscale(100%);
                                     -o-filter:      grayscale(100%);">
+                                </p>
+
+                                <p>
+                                    <img class="partners ms" src="img/github_logo.png" style="width: 120px; opacity:0.2;
+                                    -webkit-filter: grayscale(100%);
+                                    -moz-filter:    grayscale(100%);
+                                    -ms-filter:     grayscale(100%);
+                                    -o-filter:      grayscale(100%);">
+                                </p>
+
+                                <p>
+                                    <img class=" partners cf" src="img/cf-logo-h-rgb.png" style="margin-left: 5px; width: 120px; opacity:0.4; 
+                                        -webkit-filter: grayscale(100%);
+                                        -moz-filter:    grayscale(100%);
+                                        -ms-filter:     grayscale(100%);
+                                        -o-filter:      grayscale(100%);">
                                 </p>
                             </div>
                         </div>
