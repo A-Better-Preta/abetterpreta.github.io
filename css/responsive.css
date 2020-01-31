@@ -2387,8 +2387,8 @@
 }
 
 @media (max-width:768px){
-    .fun_fact_area h1.t_color3 {
-        font-size: smaller;
+    #tpps {
+        font-size: 5em;
     }
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
         display: none;
