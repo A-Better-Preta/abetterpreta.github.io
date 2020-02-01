@@ -2401,7 +2401,7 @@
         padding-top: 30px;
         padding-left: 40px;
     }
-    #pricing .d-flex {
+    #pricing .track_body {
         display: grid !important;
     }
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
