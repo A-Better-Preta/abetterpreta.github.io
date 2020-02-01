@@ -2390,6 +2390,19 @@
     #tpps {
         font-size: 5em;
     }
+    .agency_featured_area .agency_featured_img img {
+        max-width: 200%;
+        margin-left: -33%;
+    }
+    #pricing {
+        padding-top: 350px !important;
+    }
+    #pricing .track_text {
+        padding-top: 30px;
+    }
+    #pricing .d-flex {
+        display: grid;
+    }
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
         display: none;
     }
