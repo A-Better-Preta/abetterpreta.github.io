@@ -185,7 +185,7 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span id="tpps" style="font-size: 6em;"></span>
+                                <h1 class="t_color3"><span id="tpps" class="counter"></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -627,6 +627,38 @@ HTTP/1.1 200 OK
                 </div>
             </div>
         </section>
+        <section class="tracking_price_area sec_pad" id="pricing">
+            <div class="container">
+                <div class="sec_title text-center mb_70">
+                    <h1 class="t_color3 f_p f_700 mb_20">So what about pricing then?</h1>
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Compliance tends to be expensive. A Better Preta
+                        sure is not.<br>We just made it dead simple. One price for everyone.</h2><br>
+                    <p class="f_400 f_size_18 l_height34">Disruption comes from innovation and simplification.<br>
+                        Affordable simplification will give room for innovation.</p>
+                </div>
+                <div class="tracking_price_inner wow fadeInUp">
+                    <div class="d-flex track_body">
+                        <div class="track_price">
+                            <h3>€999</h3>
+                            <h6>/month</h6>
+                        </div>
+                        <div class="track_text">
+                            <h4>Free for 30 days</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i>Cancel anytime within 30 days</li>
+                                <li><i class="fas fa-check"></i>12 months downpayment</li>
+                                <li><i class="fas fa-check"></i>One invoice per year</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="checkout/" class="software_banner_btn btn_submit f_500">Continue & order</a>
+                        <h6>(No credit card required)</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
         <section class="s_pricing_area sec_pad" id="pricing">
             <div class="container custom_container">
                 <div class="sec_title text-center mb_70">
@@ -706,6 +738,7 @@ HTTP/1.1 200 OK
                 </div>
             </div>
         </section>
+    -->
         <footer class="footer_area footer_area_five pt_150 f_bg">
             <div class="footer_top">
                 <div class="container">
@@ -736,8 +769,7 @@ HTTP/1.1 200 OK
                             <div class="f_widget about-widget pl_40">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">About Us</h3>
                                 <ul class="list-unstyled f_list">
-                                    <li style="filter: opacity(0.5)">Team<span
-                                            style="font-size: 0.8em; line-height: 2rem">, coming soon</span></li>
+                                    <li style="filter: opacity(0.5)"><a href="team/">Team</a></li>
                                     <li style="filter: opacity(0.5)">Jobs<span
                                             style="font-size: 0.8em; line-height: 2rem">, chill out</span></li>
                                     <li style="filter: opacity(0.5)">Press<span
@@ -842,8 +874,11 @@ HTTP/1.1 200 OK
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
+    <script src="vendors/counterup/appear.js"></script>
     <script>
-        $('#tpps').load('tpps.txt');
+        $('#tpps').load('https://abetterpreta.com/tpps.txt');
     </script>
 </body>
 
