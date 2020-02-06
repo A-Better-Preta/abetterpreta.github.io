@@ -190,7 +190,7 @@
                             <div class="wow">
                                 <p class="mb-0">No. of current<br><b>Third-party Payment service Providers,
                                         TPPs</b>.</p>
-                                <h1 class="t_color3"><span id="tpps" class="counter"></span>
+                                <h1 class="t_color3"><span id="tpps" class="counterUp"></span>
                                 </h1>
                                 <span style="font-size: 1em;">Issued by</span>
 
@@ -795,7 +795,77 @@ HTTP/1.1 200 OK
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="vendors/termynal.js" data-termynal="#termynal"></script>
-    <script crossorigin="anonymous">
+    <script>
+
+        var request = new XMLHttpRequest();
+        var url = 'https://gitlab.com/abetterpreta/dailytpps/raw/master/tpps.txt';
+
+        // Create the XHR object.
+        function createCORSRequest(method, url) {
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                // XHR for Chrome/Firefox/Opera/Safari.
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined") {
+                // XDomainRequest for IE.
+                xhr = new XDomainRequest();
+                xhr.open(method, url);
+            } else {
+                // CORS not supported.
+                xhr = null;
+            }
+            return xhr;
+        }
+
+        function makeCorsRequest() {
+            var xhr = createCORSRequest('GET', url);
+            if (!xhr) {
+                alert('CORS not supported');
+                return;
+            }
+            xhr.onload = function () {
+                showUser(str);
+                console.log("onload");
+            };
+            xhr.onerror = function () {
+                alert('Woops, there was an error making the request.');
+            };
+
+            xhr.send();
+        }
+
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("txtHint").innerHTML = "Please make a selection.";
+                return;
+            }
+            document.getElementById("txtHint").innerHTML = "Getting data ...";
+            // for IE7+, Firefox, Chrome, Opera, Safari
+            if (window.XMLHttpRequest) {
+                var xmlhttp = new XMLHttpRequest();
+            }
+            // for IE6, IE5 - not used on Android
+            else {
+                var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var txt = xmlhttp.responseText;
+                    console.log("responseText = ".txt);  // "undefined"
+                    document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                }
+            }
+
+            // Need full URL to page, since this HTML page is not on server.
+            xmlhttp.open("GET", "https://gitlab.com/abetterpreta/dailytpps/raw/master/tpps.txt", true);
+            xmlhttp.send();
+        }
+
+
+
+    </script>
+    <script>
         $('#tpps').load('https://gitlab.com/abetterpreta/dailytpps/raw/master/tpps.txt');
     </script>
 </body>
